@@ -8,6 +8,7 @@ class RestserviceApplicationTests {
 
     @Test
     void contextLoads() {
+         // Этот тест проверяет, что контекст Spring Boot загружается корректно
     }
 
 }
