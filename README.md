@@ -134,12 +134,6 @@ cd unishop
 # Запустите приложение
 ./mvnw spring-boot:run</code></pre>
 
-    <h3>Или через Docker:</h3>
-    <pre><code>docker-compose up --build</code></pre>
-
-    <div class="highlight">
-        Swagger доступен по адресу: <strong>http://localhost:8080/swagger-ui/index.html</strong>
-    </div>
 </div>
 
 </body>
