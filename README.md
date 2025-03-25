@@ -1,5 +1,5 @@
 
-<h1>🎓 University Project – Web Service for Online Shop</h1>
+<h1>🎓 Web Service for Online Shop</h1>
 
 <div class="section">
     <h2>📌 Описание проекта</h2>
