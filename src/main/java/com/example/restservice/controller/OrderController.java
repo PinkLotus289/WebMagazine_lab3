@@ -4,7 +4,6 @@ import com.example.restservice.dto.OrderDto;
 import com.example.restservice.model.Order;
 import com.example.restservice.service.OrderService;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
