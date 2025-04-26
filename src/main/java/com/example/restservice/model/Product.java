@@ -1,16 +1,16 @@
 package com.example.restservice.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "products")
@@ -23,14 +23,19 @@ public class Product {
     private String name;
     private BigDecimal price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) // поменял здесь
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonBackReference
     private Category category;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<Order> orders = new HashSet<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    @JsonBackReference
+    private Order order;
 
-    // ✅ Геттеры и сеттеры
+    // Геттеры и сеттеры
+
+    public Product() {}
 
     public Long getId() {
         return id;
@@ -64,11 +69,11 @@ public class Product {
         this.category = category;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }

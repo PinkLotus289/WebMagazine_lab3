@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class ProductService {
-
     private final ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository) {
@@ -28,11 +28,11 @@ public class ProductService {
     }
 
     public Optional<Product> updateProduct(Long id, Product productDetails) {
-        return productRepository.findById(id).map(existingProduct -> {
-            existingProduct.setName(productDetails.getName());
-            existingProduct.setPrice(productDetails.getPrice());
-            existingProduct.setCategory(productDetails.getCategory());
-            return productRepository.save(existingProduct);
+        return productRepository.findById(id).map(product -> {
+            product.setName(productDetails.getName());
+            product.setPrice(productDetails.getPrice());
+            product.setCategory(productDetails.getCategory());
+            return productRepository.save(product);
         });
     }
 

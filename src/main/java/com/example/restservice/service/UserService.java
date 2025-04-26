@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -28,10 +28,10 @@ public class UserService {
     }
 
     public Optional<User> updateUser(Long id, User userDetails) {
-        return userRepository.findById(id).map(existingUser -> {
-            existingUser.setUsername(userDetails.getUsername());
-            existingUser.setEmail(userDetails.getEmail());
-            return userRepository.save(existingUser);
+        return userRepository.findById(id).map(user -> {
+            user.setUsername(userDetails.getUsername());
+            user.setEmail(userDetails.getEmail());
+            return userRepository.save(user);
         });
     }
 
@@ -43,4 +43,3 @@ public class UserService {
         return false;
     }
 }
-

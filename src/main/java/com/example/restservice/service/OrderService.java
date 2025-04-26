@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class OrderService {
-
     private final OrderRepository orderRepository;
 
     public OrderService(OrderRepository orderRepository) {
@@ -23,21 +23,16 @@ public class OrderService {
         return orderRepository.findById(id);
     }
 
-    public List<Order> getOrdersByUserId(Long userId) {
-        return orderRepository.findByUserId(userId);
+    public Order createOrder(Order order) {
+        return orderRepository.save(order);
     }
 
     public Optional<Order> updateOrder(Long id, Order orderDetails) {
         return orderRepository.findById(id).map(order -> {
             order.setOrderDate(orderDetails.getOrderDate());
             order.setUser(orderDetails.getUser());
-            order.setProducts(orderDetails.getProducts());
             return orderRepository.save(order);
         });
-    }
-
-    public Order createOrder(Order order) {
-        return orderRepository.save(order);
     }
 
     public boolean deleteOrder(Long id) {
@@ -47,5 +42,4 @@ public class OrderService {
         }
         return false;
     }
-
 }
