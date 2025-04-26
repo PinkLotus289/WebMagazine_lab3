@@ -39,7 +39,9 @@ public class Order {
 
 
     public Order() {
-        // Пустой конструктор для JPA
+        /*
+         * Пустой конструктор необходим для JPA.
+         */
     }
 
     public Long getId() {

@@ -37,7 +37,9 @@ public class Product {
 
 
     public Product() {
-        // Пустой конструктор для JPA
+        /*
+         * Пустой конструктор необходим для JPA.
+         */
     }
 
     public Long getId() {
