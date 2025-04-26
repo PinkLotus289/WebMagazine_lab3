@@ -35,6 +35,10 @@ public class Product {
 
     // Геттеры и сеттеры
 
+    /**
+     * Пустой конструктор требуется для JPA.
+     */
+
     public Product() {}
 
     public Long getId() {

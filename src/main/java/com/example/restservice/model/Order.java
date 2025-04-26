@@ -37,6 +37,10 @@ public class Order {
 
     // Геттеры и сеттеры
 
+    /**
+     * Пустой конструктор требуется для JPA.
+     */
+
     public Order() {}
 
     public Long getId() {

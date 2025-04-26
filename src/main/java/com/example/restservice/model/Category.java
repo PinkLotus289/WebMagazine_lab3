@@ -30,6 +30,10 @@ public class Category {
 
     // Геттеры и сеттеры
 
+    /**
+     * Пустой конструктор требуется для JPA.
+     */
+
     public Category() {}
 
     public Long getId() {

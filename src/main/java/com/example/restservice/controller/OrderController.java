@@ -34,9 +34,9 @@ public class OrderController {
                         order.getUser() != null ? order.getUser().getUsername() : null,
                         order.getProducts().stream()
                                 .map(product -> product.getName())
-                                .collect(Collectors.toList())
+                                .toList()
                 ))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @GetMapping("/{id}")
@@ -48,7 +48,7 @@ public class OrderController {
                         order.getUser() != null ? order.getUser().getUsername() : null,
                         order.getProducts().stream()
                                 .map(product -> product.getName())
-                                .collect(Collectors.toList())
+                                .toList()
                 )))
                 .orElse(ResponseEntity.notFound().build());
     }
